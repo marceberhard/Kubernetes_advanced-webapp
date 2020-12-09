@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: ***-ui
+  name: ****-ui
+  namespace: ****
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ***-ui
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: ****-ui
+    spec:
+      containers:
+      - image: *dockerhubimage*/***-ui:1.1
+        name: ***-ui
+        ports:
+        - containerPort: 80

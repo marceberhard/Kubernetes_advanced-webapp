@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ .Values.db.pvc.name }}
+  namespace: {{ .Values.db.namespace }}
+spec:
+  selector:
+    matchLabels:
+      app: {{ .Values.db.name }}
+  accessModes:
+  - {{ .Values.db.pvc.accessMode }}
+  resources:
+    requests:
+      storage: {{ .Values.db.pvc.storage }}

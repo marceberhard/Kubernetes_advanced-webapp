@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ***-app
+  namespace: ***
+spec:
+  type: ClusterIP #assigns every pod own ip, no indiv. assignment, gem. Web
+  selector:
+    app: ***-app
+  ports:
+    #- protocol: TCP #nur tcp||udp, nicht beide möglich in einem service
+    - port: 8080
+      targetPort: 8080

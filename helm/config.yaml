@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Values.db.config.name }}
+  namespace: {{ .Values.db.namespace }}
+data:
+{{- range .Values.db.config.data }}
+  {{ .key }}: {{ .value }}
+{{- end }}

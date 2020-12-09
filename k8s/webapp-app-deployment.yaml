@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: ***-app
+  name: **-app
+  namespace: ***
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: ***-app
+  template:
+    metadata:
+      labels:
+        app: ***-app
+    spec:
+      containers:
+      - name: ***-app
+        image: *dockerhubimage*/***-app:1.1
+        ports:
+          - containerPort: 8080
+        env:
+        - name: POSTGRES_USER
+          valueFrom:
+            secretKeyRef:
+              name: secret-ns-***-dbconnect
+              key: POSTGRES_USER
+        - name: POSTGRES_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: secret-ns-***-dbconnect
+              key: POSTGRES_PASSWORD
+        envFrom:
+        - configMapRef:
+              name: ***-app-db-connection-configmap

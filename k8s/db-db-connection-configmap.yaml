@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: db-db-connection-configmap
+  namespace: database
+data:
+  POSTGRES_DB: ***

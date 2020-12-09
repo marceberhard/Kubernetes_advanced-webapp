@@ -1,0 +1,32 @@
+replicaCount: 1
+
+db:
+  name: db
+  namespace: ***-he*lm
+  container:
+    image: postgres:10.15-alpine
+    port: ****
+  service:
+    type: ClusterIP
+    port: ****
+  volume:
+    name: ****-data
+    kind: PersistentVolumeClaim
+    mountPath: /var/lib/postgresql/data
+  pvc:
+    name: ***-data-pvc
+    accessMode: ReadWriteOnce
+    storage: 1Gi
+  config:
+    name: db-config
+    data:
+    - key: key
+      value: value
+#  secret:
+#   name: secret
+#    user:
+#      key: key
+#      value: value
+#    password:
+#     key: key
+#      value: value
