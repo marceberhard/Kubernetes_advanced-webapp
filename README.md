@@ -1,5 +1,5 @@
 # Kubernetes_advanced-webapp
-..with helm.
+..and some helm.
 What it all is about -> ReadMe
 
 Contents:
