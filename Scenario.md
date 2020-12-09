@@ -1,4 +1,8 @@
-# Kubernetes_Helm_advanced-webapp
+# Kubernetes_advanced-webapp
+...and some helm
+
+
+
 **********-----------------------------------**********
 Hi there, this was a university project.
 
