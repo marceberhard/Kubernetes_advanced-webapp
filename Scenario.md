@@ -1,7 +1,7 @@
 # Kubernetes_advanced-webapp
 ...and some helm
 
-
+- standalone just with kubernetes deployment, without helm -
 
 **********-----------------------------------**********
 Hi there, this was a university project.
